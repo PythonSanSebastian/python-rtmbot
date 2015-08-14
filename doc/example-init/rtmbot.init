@@ -18,7 +18,7 @@ APPARGS="--config ${APPDIR}/rtmbot.conf"
 USER="ubuntu"
 GROUP="ubuntu"
 
-# Include functions 
+# Include functions
 set -e
 . /lib/lsb/init-functions
 
@@ -44,7 +44,7 @@ stop() {
   while test -d /proc/$(cat /var/run/$NAME.pid); do
     killtree $(cat /var/run/$NAME.pid) 15
     sleep 0.5
-  done 
+  done
   [ -z `cat /var/run/$NAME.pid 2>/dev/null` ] || rm /var/run/$NAME.pid
   printf "done\n"
 }
